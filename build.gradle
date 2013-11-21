@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+version = '0.1'
+
+repositories {
+    maven {
+        url uri('/home/wiliam/devel/aosp-tools/out/host/gradle/repo')
+    }
+}
+
+dependencies {
+    compile group: 'com.android.tools.ddms', name: 'ddmlib', version: '22.2.0-SNAPSHOT'
+}
+
+task runMonitor(dependsOn: 'classes', type: JavaExec) {
+    main = 'com.github.wiliamsouza.monitor.Monitor'
+    classpath = sourceSets.main.runtimeClasspath
+}
