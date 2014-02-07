@@ -8,12 +8,12 @@ version = '0.1'
 
 repositories {
     maven {
-        url uri('/home/wiliam/devel/aosp-tools/out/host/gradle/repo')
+        url uri(ddmlibRepoDir)
     }
 }
 
 dependencies {
-    compile group: 'com.android.tools.ddms', name: 'ddmlib', version: '22.2.0-SNAPSHOT'
+    compile group: 'com.android.tools.ddms', name: 'ddmlib', version: '22.4.0-SNAPSHOT'
 }
 
 task runMonitor(dependsOn: 'classes', type: JavaExec) {
